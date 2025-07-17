@@ -144,5 +144,3 @@ weighted avg      0.946     0.946     0.946      4217
 - 🔍 Incorporate explainability using **Grad-CAM**, **Score-CAM**, **LRP**, or **SHAP** to visualize disease-relevant features.
 
 ---
-
-> Made with ❤️ for medical imaging and deep learning research.
