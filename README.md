@@ -50,52 +50,71 @@ Eye-Disease-Detection-GCN/
 
 ---
 ```
-📦 Requirements
-Python 3.8+
 
-PyTorch
+---
 
-PyTorch Geometric
+## 📦 Requirements
 
-scikit-learn
+- Python 3.8+
+- PyTorch
+- PyTorch Geometric
+- scikit-learn
+- pandas
+- numpy
 
-pandas
+Install dependencies:
 
-numpy
-
-Install them using:
-
+```bash
 pip install -r requirements.txt
-🚀 How to Run
-Preprocess and Load the Data
+```
 
+---
+
+## 🚀 How to Run
+
+### 1. Preprocess and Load the Data
+
+```bash
 python utils/data_loader.py
-Train the GCN Model
+```
 
+### 2. Train the GCN Model
+
+```bash
 python train_gcn.py
-Evaluate the GCN Model
+```
 
+### 3. Evaluate the Model
+
+```bash
 python evaluate_gcn.py
-📊 Model Accuracy Comparison
-Model Accuracy Comparison:
+```
 
-+--------------------+----------------+----------------+-----------+
-| Model              | Train Accuracy | Test Accuracy  | Test Loss |
-+--------------------+----------------+----------------+-----------+
-| GCN Model          | 94.69%         | 93.01%         | 14.52     |
-| Refined GCN Model  | 95.11%         | 92.01%         | 13.9      |
-+--------------------+----------------+----------------+-----------+
-📈 Classification Report
-Code used:
+---
 
+## 📊 Model Accuracy Comparison
+
+| Model             | Train Accuracy | Test Accuracy | Test Loss |
+|------------------|----------------|---------------|-----------|
+| GCN Model         | 94.69%         | 93.01%        | 14.52     |
+| Refined GCN Model | 95.11%         | 92.01%        | 13.90     |
+
+---
+
+## 📈 Classification Report
+
+```python
 from sklearn.metrics import classification_report
 
 model.eval()
 out = model(data.x, data.edge_index)
 pred = out.argmax(dim=1).cpu()
 print(classification_report(y.cpu(), pred, digits=3))
-Output:
+```
 
+**Output:**
+
+```
               precision    recall  f1-score   support
 
            0      0.966     0.960     0.963      1038
@@ -106,16 +125,24 @@ Output:
     accuracy                          0.946      4217
    macro avg      0.945     0.945     0.945      4217
 weighted avg      0.946     0.946     0.946      4217
-✅ Conclusion
-GCN models are effective in learning from structured graph data.
+```
 
-The Refined GCN Model provided better generalization on the training set, although slight overfitting might have occurred.
+---
 
-Precision and recall metrics show strong performance across all classes.
+## ✅ Conclusion
 
-🧠 Future Work
-Experiment with deeper GCN layers or attention mechanisms (e.g., GAT).
+- GCN models are effective in learning from structured image representations using graph data.
+- The refined GCN architecture shows improved training performance, though it slightly overfits compared to the base model.
+- Precision, recall, and F1-scores across all classes indicate robust and consistent model behavior.
 
-Use end-to-end learning from raw images to classification.
+---
 
-Add model explainability using techniques like Grad-CAM or SHAP.
+## 🧠 Future Work
+
+- 🔬 Explore deeper GCN layers and attention-based architectures like Graph Attention Networks (GAT).
+- 📉 Integrate end-to-end learning from raw images to final classification using hybrid models.
+- 🔍 Incorporate explainability using **Grad-CAM**, **Score-CAM**, **LRP**, or **SHAP** to visualize disease-relevant features.
+
+---
+
+> Made with ❤️ for medical imaging and deep learning research.
