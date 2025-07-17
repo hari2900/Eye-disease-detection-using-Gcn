@@ -16,8 +16,6 @@ A deep learning project that detects and classifies common eye diseases—**Cata
 
 ## 🗂️ Dataset
 
-"https://www.kaggle.com/datasets/gunavenkatdoddi/eye-diseases-classification"
-
 The model was trained and evaluated on a curated dataset containing labeled retinal images across 4 categories:
 
 - **Cataract**
@@ -25,29 +23,28 @@ The model was trained and evaluated on a curated dataset containing labeled reti
 - **Diabetic Retinopathy**
 - **Normal**
 
+> 📝 Note: "https://www.kaggle.com/datasets/gunavenkatdoddi/eye-diseases-classification"
+---
+
 ## 🏗️ Project Structure
-<pre> <code> ``` <PASTE Eye-Disease-Detection-GCN
-│   README.md
-│   requirements.txt
-│
-├───data
-│   ├───raw
-│   │   ├───cataract
-│   │   ├───glaucoma
-│   │   ├───normal
-│   │   └───diabetic_retinopathy
-│   └───preprocessed
-│       ├───...
-├───models
-│       gcn_model.py
-│       efficientnet_features.py
-├───graph
-│       graph_coarsening.py
-│       graph_refinement.py
-│       build_graph.py
-├───train
-│       train_gcn.py
-│       train_refined_gcn.py
-│       compare_accuracy.py
-└───outputs
-> ``` </code> </pre>
+
+```bash
+Eye-Disease-Detection-GCN/
+├── data/
+│ ├── raw/ # Original dataset (4 disease classes)
+│ │ ├── diabetic_retinopathy/
+│ │ ├── cataract/
+│ │ ├── glaucoma/
+│ │ └── normal/
+│ ├── preprocessed/ # Preprocessed images
+│ │ ├── diabetic_retinopathy/
+│ │ ├── cataract/
+│ │ ├── glaucoma/
+│ │ └── normal/
+│ └── graph/ # Graph data (EfficientNet features, labels, edges)
+│ ├── features.npy
+│ ├── labels.npy
+│ └── edge_index.npy
+├── models/
+│ ├── efficientnet_features.py # Extracts and saves features.npy and labels.npy
+│ └── gcn_model.py # GCN architecture
