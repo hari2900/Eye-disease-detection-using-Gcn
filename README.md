@@ -1,8 +1,6 @@
 # 👁️ Eye Disease Detection using GCN and EfficientNet
 
-A deep learning project that detects and classifies common eye diseases—**Cataract**, **Glaucoma**, **Diabetic Retinopathy**, and **Normal**—from retinal fundus images. This system combines **EfficientNet** for feature extraction and **Graph Convolutional Networks (GCNs)** for relational learning on image features, leveraging spatial dependencies between samples for improved diagnostic accuracy.
-
- Utilized graph-based relationships and spatial dependencies in image features, applied graph coarsening techniques, and achieved 94.69% accuracy with the base GCN model and 95.11% with the refined GCN architecture
+A deep learning project that detects and classifies common eye diseases—**Cataract**, **Glaucoma**, **Diabetic Retinopathy**, and **Normal**—from retinal fundus images. This system combines **EfficientNet** for feature extraction and **Graph Convolutional Networks (GCNs)** for relational learning on image features, leveraging spatial dependencies between samples for improved diagnostic accuracy.Utilized graph-based relationships and spatial dependencies in image features, applied graph coarsening techniques, and achieved 94.69% accuracy with the base GCN model and 95.11% with the refined GCN architecture
 ---
 
 ## 📌 Features
