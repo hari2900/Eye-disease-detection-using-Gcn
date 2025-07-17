@@ -48,3 +48,74 @@ Eye-Disease-Detection-GCN/
 │ ├── efficientnet_features.py # Extracts and saves features.npy and labels.npy
 │ └── gcn_model.py # GCN architecture
 
+---
+```
+📦 Requirements
+Python 3.8+
+
+PyTorch
+
+PyTorch Geometric
+
+scikit-learn
+
+pandas
+
+numpy
+
+Install them using:
+
+pip install -r requirements.txt
+🚀 How to Run
+Preprocess and Load the Data
+
+python utils/data_loader.py
+Train the GCN Model
+
+python train_gcn.py
+Evaluate the GCN Model
+
+python evaluate_gcn.py
+📊 Model Accuracy Comparison
+Model Accuracy Comparison:
+
++--------------------+----------------+----------------+-----------+
+| Model              | Train Accuracy | Test Accuracy  | Test Loss |
++--------------------+----------------+----------------+-----------+
+| GCN Model          | 94.69%         | 93.01%         | 14.52     |
+| Refined GCN Model  | 95.11%         | 92.01%         | 13.9      |
++--------------------+----------------+----------------+-----------+
+📈 Classification Report
+Code used:
+
+from sklearn.metrics import classification_report
+
+model.eval()
+out = model(data.x, data.edge_index)
+pred = out.argmax(dim=1).cpu()
+print(classification_report(y.cpu(), pred, digits=3))
+Output:
+
+              precision    recall  f1-score   support
+
+           0      0.966     0.960     0.963      1038
+           1      0.997     0.994     0.995      1098
+           2      0.917     0.887     0.902      1007
+           3      0.902     0.939     0.920      1074
+
+    accuracy                          0.946      4217
+   macro avg      0.945     0.945     0.945      4217
+weighted avg      0.946     0.946     0.946      4217
+✅ Conclusion
+GCN models are effective in learning from structured graph data.
+
+The Refined GCN Model provided better generalization on the training set, although slight overfitting might have occurred.
+
+Precision and recall metrics show strong performance across all classes.
+
+🧠 Future Work
+Experiment with deeper GCN layers or attention mechanisms (e.g., GAT).
+
+Use end-to-end learning from raw images to classification.
+
+Add model explainability using techniques like Grad-CAM or SHAP.
