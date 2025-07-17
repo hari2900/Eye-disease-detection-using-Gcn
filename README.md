@@ -26,5 +26,28 @@ The model was trained and evaluated on a curated dataset containing labeled reti
 - **Normal**
 
 ## 🏗️ Project Structure
-
-<pre> <code> ``` Eye-Disease-Detection-GCN/ ├── data/ │ ├── raw/ # Original dataset (4 disease classes) │ │ ├── diabetic_retinopathy/ │ │ ├── cataract/ │ │ ├── glaucoma/ │ │ └── normal/ │ ├── preprocessed/ # Preprocessed images │ │ ├── diabetic_retinopathy/ │ │ ├── cataract/ │ │ ├── glaucoma/ │ │ └── normal/ │ └── graph/ # Graph data (EfficientNet features, labels, edges) │ ├── features.npy │ ├── labels.npy │ └── edge_index.npy ├── models/ │ ├── efficientnet_features.py # Extract features │ └── gcn_model.py # GCN architecture ├── graph/ │ ├── build_graph.py # Constructs edge_index │ ├── graph_coarsening.py # Applies coarsening │ └── graph_refinement.py # Refines the graph ├── train/ │ ├── train_gcn.py # Trains base GCN │ ├── train_refined_gcn.py # Trains refined GCN │ └── compare_accuracy.py # Compares model accuracies ├── outputs/ # Models and result files ├── README.md └── requirements.txt ``` </code> </pre>
+<pre> <code> ``` <PASTE Eye-Disease-Detection-GCN
+│   README.md
+│   requirements.txt
+│
+├───data
+│   ├───raw
+│   │   ├───cataract
+│   │   ├───glaucoma
+│   │   ├───normal
+│   │   └───diabetic_retinopathy
+│   └───preprocessed
+│       ├───...
+├───models
+│       gcn_model.py
+│       efficientnet_features.py
+├───graph
+│       graph_coarsening.py
+│       graph_refinement.py
+│       build_graph.py
+├───train
+│       train_gcn.py
+│       train_refined_gcn.py
+│       compare_accuracy.py
+└───outputs
+> ``` </code> </pre>
